@@ -14,7 +14,7 @@ class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
 
-  def search(name)
+  def self.search(name)
     unless search_attributes.blank?
       Student.find_by(name: name)
     else
