@@ -16,7 +16,7 @@ class Student < ActiveRecord::Base
 
   def self.search(name)
     unless name.blank?
-      self.find_by(name: name)
+      self.where(:name.downcase.include?(name))
     else
       self.all
     end
