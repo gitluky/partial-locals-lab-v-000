@@ -1,1 +1,3 @@
-<%= render partial: 'student', locals: { student: Student.search('rob')} %>
+<% search_results.each do |search_result| %>
+  <%= render partial: 'student', locals: { student: Student.search('rob')} %>
+<% end %>
