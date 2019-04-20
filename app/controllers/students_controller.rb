@@ -24,11 +24,6 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
-  def search
-    @student = Student.find(params[:id])
-    render :index
-  end
-
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
   end
