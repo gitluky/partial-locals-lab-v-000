@@ -16,7 +16,7 @@ class Student < ActiveRecord::Base
 
   def self.search(search_name)
     unless name.blank?
-      self.where("name.downcase like ?", "%#{search_name}%" )
+      self.where("name LIKE ?", "%#{search_name}%" )
     else
       self.all
     end
