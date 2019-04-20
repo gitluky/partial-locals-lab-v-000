@@ -16,9 +16,9 @@ class Student < ActiveRecord::Base
 
   def self.search(name)
     unless search_attributes.blank?
-      Student.find_by(name: name)
+      self.find_by(name: name)
     else
-      Student.all
+      self.all
     end
   end
 end
